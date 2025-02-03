@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
+import Footer from "./components/Footer.tsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -38,6 +39,7 @@ function App() {
         <Articles />
         <Testimonials />
         <Contact />
+        <Footer/>
       </main>
     </div>
   );
