@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github as GitHub, Linkedin, Mail } from 'lucide-react';
+import {TypingAnimation} from "./ui/TypingAnimation.tsx";
 
 export default function Hero() {
   return (
@@ -16,9 +17,15 @@ export default function Hero() {
         <div className="container mx-auto px-4 py-16 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left space-y-6 text-white">
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
-                Pathum Rathnayaka
-              </h1>
+                <TypingAnimation
+                    className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent"
+                    duration={100} // Adjust typing speed
+                    delay={500} // Delay before typing starts
+                    startOnView={true} // Start animation when visible
+                >
+                  Pathum Rathnayaka
+                </TypingAnimation>
+
               <h2 className="text-2xl md:text-3xl text-gray-200">
                 Software Engineer
               </h2>
