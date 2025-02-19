@@ -15,7 +15,7 @@ export default function Hero() {
         <div
             className="absolute inset-0 bg-cover bg-center sm:hidden"
             style={{
-              backgroundImage: `url('https://github.com/PathumRathnayaka/software/blob/main/covermobile.png?raw=true')`,
+              backgroundImage: `url('https://github.com/PathumRathnayaka/software/blob/main/mobilecover1.png?raw=true')`,
             }}
         />
 
