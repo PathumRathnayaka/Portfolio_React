@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react';
 
 const articles = [
   {
-    title: 'Building Scalable React Applications',
+    title: 'Microservice Architecture සිංහලෙන්',
     excerpt: 'Learn best practices for building large-scale React applications with modern architecture.',
     date: 'Mar 15, 2024',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80',
+    image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5n9bpYud478tvbp2TxArV10ZPsDzXLmv0Q4TmReci54uNarwx0BRg_ljTIjLC5Yv6tRd-OwEkGiTqQMWwcf3o8q9fgSc76u3UGNVHesFBooBrvhy5aL9BUV8kfmMtmz-j36ncDcJ5T1iw3SwJpjEKXyAzj_Ljl42zddmd1yvtG3GmH5vZhMfMAjdwIRlF/w508-h305/643fda5329f14368ca72adaf_Example%20of%20a%20microservice.png',
   },
   {
     title: 'The Future of Web Development',
@@ -15,10 +15,10 @@ const articles = [
     image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=800&q=80',
   },
   {
-    title: 'Mastering TypeScript',
+    title: 'මොනවද මෙ SOLID Principles කියන්නෙ?',
     excerpt: 'A comprehensive guide to using TypeScript effectively in your projects.',
     date: 'Mar 5, 2024',
-    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=800&q=80',
+    image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiibbrQWTM58mZCta-ZFMhiRj0f_PPMtmQlQGpPYqfxBCbGQeLk-0WB3Jz-flWuEE6UT8go-a1AmTu7ZHBR3w-gYngMomWJab9cShgy3HYUNc3MB7Y8WADVeZLYuy28wVg-Aay3vBxd-7Fio0fUhJyMQs_R8cUjCQWV023wn1as1ukgm0JIjSVPAw7XeiBV/w610-h376/image%20(1).jpg',
   },
 ];
 
