@@ -5,7 +5,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Projects from './components/Projects';
 import Articles from './components/Articles';
-import Testimonials from './components/Testimonials';
+/*import Testimonials from './components/Testimonials';*/
 import Contact from './components/Contact';
 import Footer from "./components/Footer.tsx";
 
@@ -37,7 +37,7 @@ function App() {
         <Services />
         <Projects />
         <Articles />
-        <Testimonials />
+        {/*<Testimonials />*/}
         <Contact />
         <Footer/>
       </main>
