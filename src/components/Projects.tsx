@@ -3,25 +3,25 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'Subtitle Manager',
     description: 'Developed a full-stack e-commerce platform using React, Node.js, and MongoDB.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     github: 'https://github.com/example/ecommerce',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://cdn.prod.website-files.com/60d0c29c2e1261708dd228ea/669909585e9e9b266d4eaa48_subtitle-editing-tool-header-img.webp',
   },
   {
-    title: 'Mobile Task Manager App',
+    title: 'Crop Management System',
     description: 'Created a cross-platform mobile task manager app using React Native.',
     technologies: ['React Native', 'Firebase'],
     github: 'https://github.com/example/task-manager',
-    image: 'https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEZU2clm4hgRLLfvXV9GySFRMGRC47ZbIu5Q&s',
   },
   {
-    title: 'Data Visualization Dashboard',
+    title: 'AI-Powered Travel Planner',
     description: 'Built an interactive data visualization dashboard using D3.js and React.',
     technologies: ['React', 'D3.js', 'Python'],
     github: 'https://github.com/example/data-dashboard',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTogvBhiAZ7_XgX-AjFOkX8ICkJlt-uMkSGZg&s',
   },
 ];
 
