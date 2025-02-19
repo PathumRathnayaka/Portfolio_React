@@ -11,7 +11,7 @@ export default function Hero() {
             backgroundImage: `url('https://raw.githubusercontent.com/PathumRathnayaka/software/refs/heads/main/portfoliyocover.png')`,
           }}
       >
-        {/* Mobile Background Override (Only Visible on Small Screens) */}
+        {/* Mobile Background Override */}
         <div
             className="absolute inset-0 bg-cover bg-center sm:hidden"
             style={{
@@ -42,7 +42,7 @@ export default function Hero() {
 
               <div className="flex space-x-4">
                 <a
-                    href="https://github.com/johndoe"
+                    href="https://github.com/PathumRathnayaka"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -50,7 +50,7 @@ export default function Hero() {
                   <GitHub className="w-6 h-6 text-white" />
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/johndoe"
+                    href="https://www.linkedin.com/in/pathum-rathnayaka-02631b1b8/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -58,7 +58,7 @@ export default function Hero() {
                   <Linkedin className="w-6 h-6 text-white" />
                 </a>
                 <a
-                    href="mailto:john.doe@example.com"
+                    href="thilinapathumrathnayaka@gmail.com"
                     className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
                 >
                   <Mail className="w-6 h-6 text-white" />
