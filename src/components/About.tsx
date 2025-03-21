@@ -15,7 +15,7 @@ const skills = [
 export default function About() {
   return (
       <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4" >
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-5 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
               About Me
