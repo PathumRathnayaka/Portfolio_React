@@ -24,6 +24,7 @@ export default function Contact() {
         .then(() => {
           setStatus({ success: true, error: false });
           setFormData({ name: "", email: "", message: "" });
+          setTimeout(() => setStatus({ success: false, error: false }), 3000); // Reset status after 3s
         })
         .catch((error) => {
           console.error("EmailJS Error:", error);
@@ -38,55 +39,100 @@ export default function Contact() {
   ];
 
   return (
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section id="contact" className="py-20 bg-gray-50 dark:bg-gradient-to-b from-gray-900 to-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
             Get In Touch
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h3>
-              <div className="space-y-6">
+          <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-lg dark:shadow-xl p-8 lg:p-12 border border-gray-200 dark:border-gray-700/50">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Info Section */}
+              <div className="space-y-8">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Let's Connect
+                </h3>
                 {contactInfo.map((info) => (
-                    <a key={info.title} href={info.link} className="flex items-center space-x-4 text-gray-600 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400">
-                      <div className="w-12 h-12 bg-teal-500/10 dark:bg-teal-500/5 rounded-lg flex items-center justify-center text-teal-500">
+                    <a
+                        key={info.title}
+                        href={info.link}
+                        className="group flex items-center space-x-4 text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-300 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-blue-500/20 rounded-xl flex items-center justify-center text-teal-500 dark:text-teal-400 group-hover:scale-110 transition-transform duration-300">
                         {info.icon}
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900 dark:text-white">{info.title}</h4>
-                        <p>{info.content}</p>
+                        <h4 className="font-medium text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
+                          {info.title}
+                        </h4>
+                        <p className="text-sm">{info.content}</p>
                       </div>
                     </a>
                 ))}
               </div>
-            </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-              {status.success && <p className="text-green-500 mb-4">Message sent successfully!</p>}
-              {status.error && <p className="text-red-500 mb-4">Failed to send message.</p>}
+              {/* Form Section */}
+              <div className="relative">
+                {status.success && (
+                    <div className="absolute -top-12 left-0 right-0 bg-green-500/10 text-green-600 dark:text-green-400 p-3 rounded-lg text-center animate-fade-in">
+                      Message sent successfully!
+                    </div>
+                )}
+                {status.error && (
+                    <div className="absolute -top-12 left-0 right-0 bg-red-500/10 text-red-600 dark:text-red-400 p-3 rounded-lg text-center animate-fade-in">
+                      Failed to send message. Please try again.
+                    </div>
+                )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700" />
-                </div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        placeholder="Your Name"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700" />
-                </div>
+                  <div>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        placeholder="Your Email"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                  <textarea id="message" name="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required rows={4} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700" />
-                </div>
+                  <div>
+                  <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                      placeholder="Your Message"
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300 resize-none"
+                  />
+                  </div>
 
-                <button type="submit" className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white rounded-lg transition-colors">
-                  <Send className="w-5 h-5" />
-                  <span>Send Message</span>
-                </button>
-              </form>
+                  <button
+                      type="submit"
+                      className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 group"
+                  >
+                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <span>Send Message</span>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

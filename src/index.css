@@ -10,3 +10,8 @@ html {
   background-color: #14b8a6;
   color: white;
 }
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
