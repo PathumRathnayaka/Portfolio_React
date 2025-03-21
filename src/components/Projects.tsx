@@ -1,5 +1,5 @@
 import React from 'react';
-import {ArrowRight, ExternalLink, Github} from 'lucide-react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 const projects = [
     {
@@ -46,7 +46,7 @@ export default function Projects() {
                 </div>
 
                 {/* Project Cards */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
                     {projects.map((project) => (
                         <div
                             key={project.title}
@@ -107,10 +107,11 @@ export default function Projects() {
                         </div>
                     ))}
                 </div>
+
                 {/* See More Button */}
                 <div className="text-center">
                     <a
-                        href="/services" // Replace with your actual services page URL
+                        href="/projects" // Replace with your actual projects page URL
                         className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 group"
                     >
                         <span>See More</span>
