@@ -28,7 +28,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mt-5">
             <div className="relative w-3/4 mx-auto">
               <img
-                  src="https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/cover3_053717.jpg?raw=true"
+                  src="https://github.com/PathumRathnayaka/portfolio-mockup-structure-html/blob/main/assets/portfolio%20image.jpg?raw=true"
                   alt="Profile"
                   className="rounded-lg shadow-lg object-cover"
               />
