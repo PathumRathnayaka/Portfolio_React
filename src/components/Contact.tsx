@@ -39,7 +39,7 @@ export default function Contact() {
   ];
 
   return (
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gradient-to-b from-gray-900 to-gray-800">
+      <section id="contact" className="py-20 bg-gray-50 dark:bg-[#092537]">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
             Get In Touch

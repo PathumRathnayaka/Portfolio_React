@@ -11,7 +11,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-gray-50 dark:bg-gradient-to-t from-gray-900 to-gray-800 py-12 border-t border-gray-200 dark:border-gray-700/50">
+        <footer className="bg-gray-50 dark:bg-[#092537] py-12 border-t border-gray-200 dark:border-gray-700/50">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center text-center">
                     {/* Logo/Brand */}

@@ -27,7 +27,7 @@ const articles = [
 
 export default function Articles() {
   return (
-      <section className="py-20 bg-gray-50 dark:bg-gradient-to-b from-gray-900 to-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#092537]">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white group relative">
   <span

@@ -27,7 +27,7 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-20 bg-gray-50 dark:bg-gradient-to-b from-gray-900 to-gray-800">
+        <section id="projects" className="py-20 bg-gray-50 dark:bg-[#092537]">
             <div className="container mx-auto px-4">
                 {/* Section Title */}
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white group relative">
@@ -40,7 +40,7 @@ export default function Projects() {
 
                 {/* Short Description */}
                 <div className="max-w-3xl mx-auto text-center mb-12 relative">
-                    <p className="text-lg md:text-xl text-black dark:text-teal-300 leading-relaxed bg-gradient-to-r from-transparent via-teal-500/10 to-transparent dark:from-transparent dark:via-teal-500/20 dark:to-transparent py-2 px-4 rounded-lg">
+                    <p className="text-lg md:text-xl text-black dark:text-white leading-relaxed bg-gradient-to-r from-transparent via-teal-500/10 to-transparent dark:from-transparent dark:via-teal-500/20 dark:to-transparent py-2 px-4 rounded-lg">
                         I optimize websites for speed and performance using techniques like lazy loading, code splitting, and efficient caching. My projects are built with security in mind, implementing best practices such as HTTPS, input validation, and secure API integrations to protect your digital assets.
                     </p>
                 </div>

@@ -26,7 +26,7 @@ const services = [
 
 export default function Services() {
   return (
-      <section className="py-20 bg-gray-50 dark:bg-gradient-to-b from-gray-900 to-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-[#092537]">
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white group relative">
@@ -39,7 +39,7 @@ export default function Services() {
 
           {/* Short Description */}
           <div className="max-w-3xl mx-auto text-center mb-12 relative">
-            <p className="text-lg md:text-xl text-black dark:text-teal-300 leading-relaxed bg-gradient-to-r from-transparent via-teal-500/10 to-transparent dark:from-transparent dark:via-teal-500/20 dark:to-transparent py-2 px-4 rounded-lg">
+            <p className="text-lg md:text-xl text-black dark:text-white leading-relaxed bg-gradient-to-r from-transparent via-teal-500/10 to-transparent dark:from-transparent dark:via-teal-500/20 dark:to-transparent py-2 px-4 rounded-lg">
               As a passionate freelancer, I specialize in crafting innovative digital solutions using cutting-edge technologies like React, Node.js, and MongoDB. From web and mobile apps to scalable backends and stunning UI/UX designs, I deliver tailored services to bring your ideas to life.
             </p>
           </div>

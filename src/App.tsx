@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
+    <div className=" min-h-screen bg-white dark:bg-[#092537] text-gray-900 dark:text-white transition-colors">
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <Hero />
