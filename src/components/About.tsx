@@ -1,4 +1,5 @@
 import React from "react";
+import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
 const skills = [
   "JavaScript",
@@ -27,11 +28,69 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center mt-5">
             <div className="relative w-3/4 mx-auto">
-              <img
-                  src="https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/cover3_053717.jpg?raw=true"
-                  alt="Profile"
-                  className="rounded-lg shadow-lg object-cover"
-              />
+            <CardContainer className="inter-var">
+  <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+    {/* Header with avatar and name */}
+    <div className="flex items-center space-x-4">
+      <CardItem translateZ={20}>
+        <img
+          src="https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/cover3_053717.jpg?raw=true"
+          className="w-12 h-12 rounded-full object-cover"
+          alt="Avatar"
+        />
+      </CardItem>
+      <div>
+        <CardItem
+          translateZ={20}
+          className="font-semibold text-neutral-800 dark:text-white"
+        >
+          Pathum Rathnayaka
+        </CardItem>
+        <CardItem
+          translateZ={20}
+          className="text-sm text-neutral-500 dark:text-neutral-400"
+        >
+          @pathumr_dev
+        </CardItem>
+      </div>
+    </div>
+
+    {/* Tweet content */}
+    <CardItem
+      as="p"
+      translateZ={40}
+      className="text-neutral-700 dark:text-neutral-300 mt-4 text-sm"
+    >
+      Focused on the future, inspired by the view. 🚀💻 #WebDev #React #TechLife
+    </CardItem>
+
+    {/* Image */}
+    <CardItem translateZ={100} className="w-full mt-4">
+      <img
+        src="https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/cover3_053717.jpg?raw=true"
+        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+        alt="Post image"
+      />
+    </CardItem>
+
+    {/* Action buttons (icons only) */}
+    <div className="flex justify-around items-center mt-6 text-neutral-500 dark:text-neutral-400 text-sm">
+      <CardItem translateZ={20} className="hover:text-blue-500 cursor-pointer">
+        💬 Comment
+      </CardItem>
+      <CardItem translateZ={20} className="hover:text-green-500 cursor-pointer">
+        🔁 Repost
+      </CardItem>
+      <CardItem translateZ={20} className="hover:text-pink-500 cursor-pointer">
+        ❤️ Like
+      </CardItem>
+      <CardItem translateZ={20} className="hover:text-yellow-500 cursor-pointer">
+        📌 Save
+      </CardItem>
+    </div>
+  </CardBody>
+</CardContainer>
+
             </div>
 
             <div className="text-center md:text-left">

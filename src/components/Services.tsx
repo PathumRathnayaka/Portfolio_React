@@ -39,9 +39,7 @@ export default function Services() {
 
           {/* Short Description */}
           <div className="max-w-3xl mx-auto text-center mb-12 relative">
-            <p className="text-lg md:text-xl text-black dark:text-white leading-relaxed bg-gradient-to-r from-transparent via-teal-500/10 to-transparent dark:from-transparent dark:via-teal-500/20 dark:to-transparent py-2 px-4 rounded-lg">
-              As a passionate freelancer, I specialize in crafting innovative digital solutions using cutting-edge technologies like React, Node.js, and MongoDB. From web and mobile apps to scalable backends and stunning UI/UX designs, I deliver tailored services to bring your ideas to life.
-            </p>
+            
           </div>
 
           {/* Service Cards */}
