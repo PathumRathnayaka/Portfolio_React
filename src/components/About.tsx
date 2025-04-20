@@ -29,7 +29,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mt-5">
             <div className="relative w-3/4 mx-auto">
             <CardContainer className="inter-var">
-  <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+  <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0f172a] dark:border-white/[0.1] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
     {/* Header with avatar and name */}
     <div className="flex items-center space-x-4">
       <CardItem translateZ={20}>
@@ -94,9 +94,9 @@ export default function About() {
             </div>
 
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold mb-4">
+              <h2 className="text-4xl font-semibold mb-4">
                 We can make it together
-              </h3>
+              </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 A passionate software engineer in
                 developing web and mobile applications. Proficient in JavaScript,

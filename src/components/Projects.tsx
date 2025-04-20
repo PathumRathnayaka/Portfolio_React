@@ -6,11 +6,11 @@ import { cn } from '../lib/utils';
 
 const projects = [
     {
-        title: 'Subtitle Manager',
-        description: 'Developed a web app to sync and translate subtitles between two languages using the Gemini API. Users can upload subtitle files, and the tool automatically matches text and generates downloadable .srt files.',
+        title: 'Spotify clone',
+        description: 'The frontend is built with React and TypeScript for scalability and type safety, styled with Tailwind CSS, and uses Zustand for state management and React Query for efficient API calls. The backend runs on Node.js and Express.js, with MongoDB (via Mongoose) as the database. It features Clerk for secure authentication and role management, supporting various API functionalities.',
         technologies: ['React', 'Node.js', 'Express.js'],
         github: 'https://github.com/PathumRathnayaka/Subtitle-Generator-AI.git',
-        image: 'https://cdn.prod.website-files.com/60d0c29c2e1261708dd228ea/669909585e9e9b266d4eaa48_subtitle-editing-tool-header-img.webp',
+        image: 'https://spotifknowledge.com/wp-content/uploads/2024/06/ss3-1200x577.png',
     },
     {
         title: 'Crop Management System',
@@ -24,7 +24,14 @@ const projects = [
         description: 'Built an AI-driven trip planner that customizes itineraries based on user preferences. Integrated Google Places API for destinations and Firebase for data storage, with OpenAI for itinerary generation',
         technologies: ['React', 'firebase', 'OpenAI'],
         github: 'https://github.com/PathumRathnayaka/AI-travel-planner.git',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTogvBhiAZ7_XgX-AjFOkX8ICkJlt-uMkSGZg&s',
+        image: 'https://www.flightslogic.com/public/images/contents/tour-management-system1.jpg',
+    },
+    {
+        title: 'Password Manager',
+        description: 'A secure password management application with encryption, password generation, and secure storage. Features include master password protection, auto-fill, and cross-device synchronization.',
+        technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Crypto.js'],
+        github: 'https://github.com/PathumRathnayaka/Password-Manager.git',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd5ceiOeEOKvQxOAKPfA6F2abt_YH0frk67A&s',
     },
 ];
 
@@ -33,45 +40,42 @@ export default function Projects() {
         <section id="projects" className="py-20 bg-gray-50 dark:bg-[#092537]">
             <div className="container mx-auto px-4">
                 {/* Section Title */}
-                <motion.h2 
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                     className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white group relative"
                 >
-          <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
-            Featured Projects
-          </span>
+                    <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
+                        Featured Projects
+                    </span>
                     <span className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.h2>
 
-                {/* Short Description */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="max-w-3xl mx-auto text-center mb-12 relative"
-                >
-                    <p className="text-lg md:text-xl text-black dark:text-white leading-relaxed bg-gradient-to-r from-transparent via-teal-500/10 to-transparent dark:from-transparent dark:via-teal-500/20 dark:to-transparent py-2 px-4 rounded-lg">
-                        I optimize websites for speed and performance using techniques like lazy loading, code splitting, and efficient caching. My projects are built with security in mind, implementing best practices such as HTTPS, input validation, and secure API integrations to protect your digital assets.
-                    </p>
-                </motion.div>
-
                 {/* Project Cards */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
-                    {projects.map((project, index) => (
+                    {projects.map((project) => (
                         <WobbleCard
                             key={project.title}
                             containerClassName={cn(
-                                index === 0 ? "col-span-1 lg:col-span-2" : "col-span-1",
-                                "bg-white dark:bg-gray-800/50 min-h-[300px]"
+                                project.title === 'Spotify clone' || project.title === 'Password Manager'
+                                    ? 'col-span-1 lg:col-span-2'
+                                    : 'col-span-1',
+                                "bg-white dark:bg-gray-800/50 backdrop-blur-sm min-h-[300px] border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10 relative overflow-hidden"
                             )}
                         >
-                            <div className="relative h-full flex flex-col">
-                                <div className="max-w-xs">
+                            {/* Background Image */}
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0 opacity-20 pointer-events-none"
+                            />
+
+                            {/* Content */}
+                            <div className="relative h-full flex flex-col z-10">
+                                <div className="max-w-xl">
                                     <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-gray-900 dark:text-white">
                                         {project.title}
                                     </h2>
@@ -79,11 +83,7 @@ export default function Projects() {
                                         {project.description}
                                     </p>
                                 </div>
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
-                                />
+
                                 <div className="mt-auto pt-4 flex items-center gap-2">
                                     <a
                                         href={project.github}
@@ -95,7 +95,7 @@ export default function Projects() {
                                         <span>Code</span>
                                     </a>
                                     <a
-                                        href={project.github} // You might want to add a separate demo URL if available
+                                        href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center space-x-1 px-3 py-1.5 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-md transition-all duration-300 text-sm"
@@ -107,17 +107,6 @@ export default function Projects() {
                             </div>
                         </WobbleCard>
                     ))}
-                </div>
-
-                {/* See More Button */}
-                <div className="text-center">
-                    <a
-                        href="/projects" // Replace with your actual projects page URL
-                        className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 group"
-                    >
-                        <span>See More</span>
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </a>
                 </div>
             </div>
         </section>

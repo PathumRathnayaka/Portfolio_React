@@ -1,24 +1,24 @@
 import React from 'react';
-import { Globe, Smartphone, Database, PenTool, } from 'lucide-react';
+import { Globe, Smartphone, Database, PenTool } from 'lucide-react';
 
 const services = [
   {
-    icon: <Globe className="w-8 h-8" />,
+    icon: <Globe className="w-12 h-12 sm:w-32 sm:h-32" />,
     title: 'Web Development',
     description: 'Building responsive and performant web applications using modern technologies.',
   },
   {
-    icon: <Smartphone className="w-8 h-8" />,
+    icon: <Smartphone className="w-12 h-12 sm:w-32 sm:h-32" />,
     title: 'Mobile Development',
     description: 'Creating cross-platform mobile applications with React Native.',
   },
   {
-    icon: <Database className="w-8 h-8" />,
+    icon: <Database className="w-12 h-12 sm:w-32 sm:h-32" />,
     title: 'Backend Development',
     description: 'Developing scalable server-side solutions and APIs.',
   },
   {
-    icon: <PenTool className="w-8 h-8" />,
+    icon: <PenTool className="w-12 h-12 sm:w-32 sm:h-32" />,
     title: 'UI/UX Design',
     description: 'Designing intuitive and beautiful user interfaces.',
   },
@@ -26,51 +26,34 @@ const services = [
 
 export default function Services() {
   return (
-      <section className="py-20 bg-gray-50 dark:bg-[#092537]">
-        <div className="container mx-auto px-4">
-          {/* Section Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white group relative">
-          <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
-            My Services
-          </span>
-            <span className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </h2>
-
-          {/* Short Description */}
-          <div className="max-w-3xl mx-auto text-center mb-12 relative">
-            
-          </div>
-
-          {/* Service Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {services.map((service) => (
-                <div
-                    key={service.title}
-                    className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10"
-                >
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <div className="relative z-10 w-14 h-14 bg-gradient-to-br from-teal-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <div className="text-teal-500 dark:text-teal-400 group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
-                      {service.icon}
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                    {service.description}
-                  </p>
-
-                  <div className="absolute inset-0 rounded-2xl bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                </div>
-            ))}
-          </div>
-
-
-        </div>
-      </section>
+    <div className="mx-auto mt-24 mb-20 max-w-6xl text-center p-6 dark:bg-[#092537]">
+      <h2 className=" mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
+        My Services
+      </h2>
+      <div className="mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
+        {services.map((service) => (
+          <a
+            key={service.title}
+            className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10 flex w-full items-center px-4 py-6 text-black duration-200 hover:no-underline dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col"
+            href="#"
+            target="_blank"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="mr-4 sm:mr-0 sm:mt-4 sm:mb-2 text-teal-500 dark:text-teal-400">
+              {service.icon}
+            </div>
+            <div>
+              <div className="font-semibold text-black dark:text-white sm:mt-4 sm:mb-2">
+                {service.title}
+              </div>
+              <div className="text-sm opacity-75">
+                {service.description}
+              </div>
+            </div>
+            <div className="absolute inset-0 rounded-xl bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          </a>
+        ))}
+      </div>
+    </div>
   );
 }
