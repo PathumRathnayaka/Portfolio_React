@@ -7,7 +7,7 @@ import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Contact from './components/Contact';
 import Footer from "./components/Footer.tsx";
-
+import RoadMap from './components/RoadMap';
 function App() {
   // Always set dark mode
   React.useEffect(() => {
@@ -21,6 +21,7 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <RoadMap />
         <Projects />
         <Articles />
         <Contact />

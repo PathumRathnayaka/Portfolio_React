@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const articles = [
@@ -25,68 +25,171 @@ const articles = [
   },
 ];
 
-export default function Articles() {
+const certificates = [
+  {
+    title: 'React.js Advanced Certification',
+    issuer: 'Meta',
+    date: 'Apr 10, 2024',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmc6bKmYesJCaFuWTpOlOM6WiP2kGkJ0W8Hw&s',
+    link: '#certificate-link'
+  },
+  {
+    title: 'Full Stack Web Development',
+    issuer: 'freeCodeCamp',
+    date: 'Feb 22, 2024',
+    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/e77fd7215423541.Y3JvcCw5NzAsNzU5LDIsMA.jpg',
+    link: '#certificate-link'
+  },
+  {
+    title: 'AWS Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    date: 'Jan 15, 2024',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4NzcNGMKM6FOzIkyVAkO8j1X64r7A65G9lQ&s',
+    link: '#certificate-link'
+  },
+];
+
+export default function ContentTabs() {
+  const [activeTab, setActiveTab] = useState('articles');
+
   return (
-      <section className="py-20 bg-gray-50 dark:bg-[#092537]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white group relative">
-  <span
-      className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
-    Articles
-  </span>
-            <span
-                className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
-            <span
-                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
-          </h2>
+    <section className="py-20 bg-gray-50 dark:bg-[#092537]">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white group relative">
+          <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
+            My Content
+          </span>
+          <span className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+        </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
-                <article
-                    key={article.title}
-                    className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10"
-                >
-                  {/* Decorative top gradient */}
-                  <div
-                      className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  {/* Image section */}
-                  <div className="relative h-56 overflow-hidden">
-                    <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent dark:from-gray-900/80 dark:via-gray-900/40" />
-                    {/* Date badge */}
-                    <div className="absolute top-4 left-4 bg-teal-500/20 text-teal-600 dark:text-teal-300 px-3 py-1 rounded-full text-xs backdrop-blur-sm">
-                      {article.date}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 relative z-10">
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    <a
-                        href={article.link}
-                        className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-all duration-300 group/link"
-                    >
-                      <span className="text-sm">Read More</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-                    </a>
-                  </div>
-
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
-                </article>
-            ))}
+        {/* Tab Navigation */}
+        <div className="flex justify-center mb-12">
+          <div className="bg-white dark:bg-gray-800/30 rounded-full p-1 shadow-md flex">
+            <button
+              onClick={() => setActiveTab('articles')}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeTab === 'articles'
+                  ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400'
+              }`}
+            >
+              Articles
+            </button>
+            <button
+              onClick={() => setActiveTab('certificates')}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeTab === 'certificates'
+                  ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400'
+              }`}
+            >
+              Certificates
+            </button>
           </div>
         </div>
-      </section>
+
+        {/* Articles Content */}
+        {activeTab === 'articles' && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((article) => (
+              <article
+                key={article.title}
+                className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10"
+              >
+                {/* Decorative top gradient */}
+                <div
+                  className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Image section */}
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent dark:from-gray-900/80 dark:via-gray-900/40" />
+                  {/* Date badge */}
+                  <div className="absolute top-4 left-4 bg-teal-500/20 text-teal-600 dark:text-teal-300 px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+                    {article.date}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 relative z-10">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+                    {article.excerpt}
+                  </p>
+                  <a
+                    href={article.link}
+                    className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-all duration-300 group/link"
+                  >
+                    <span className="text-sm">Read More</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+              </article>
+            ))}
+          </div>
+        )}
+
+        {/* Certificates Content */}
+        {activeTab === 'certificates' && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certificates.map((certificate) => (
+              <article
+                key={certificate.title}
+                className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10"
+              >
+                {/* Decorative top gradient */}
+                <div
+                  className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Image section */}
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={certificate.image}
+                    alt={certificate.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/10 to-gray-900/30 dark:from-transparent dark:via-gray-900/40 dark:to-gray-900/60" />
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bg-blue-500/20 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+                    {certificate.issuer}
+                  </div>
+                  {/* Date badge */}
+                  <div className="absolute top-4 right-4 bg-teal-500/20 text-teal-600 dark:text-teal-300 px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+                    {certificate.date}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 relative z-10">
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
+                    {certificate.title}
+                  </h3>
+                  <a
+                    href={certificate.link}
+                    className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-all duration-300 group/link"
+                  >
+                    <span className="text-sm">View Certificate</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
