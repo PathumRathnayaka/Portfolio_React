@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-interface HeaderProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,12 +22,12 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-gray-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
-
+            
           </a>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -40,29 +35,17 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                className="text-gray-300 hover:text-teal-400 transition-colors"
               >
                 {item.label}
               </a>
             ))}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
           </div>
 
           <div className="md:hidden flex items-center">
             <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors mr-2"
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-700 transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -77,7 +60,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                  className="block px-3 py-2 rounded-md text-gray-300 hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
