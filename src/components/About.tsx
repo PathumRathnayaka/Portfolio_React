@@ -144,11 +144,18 @@ export default function About() {
 >
   We can make it together
 </motion.h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            I'm a passionate software engineer specializing in developing web and mobile
-             applications. Proficient in JavaScript, React, Node.js,
-             and Python, I enjoy solving complex problems and building innovative solutions.
-            </p>
+            {/* Paragraph animation from right */}
+            <motion.p
+              initial={{ x: 100, opacity: 0 }}         // Start off to the right
+              whileInView={{ x: 0, opacity: 1 }}       // Slide into place
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.5 }}   // Animate when 50% visible, only once
+              className="text-gray-700 dark:text-gray-300 leading-relaxed"
+            >
+              I'm a passionate software engineer specializing in developing web and mobile
+              applications. Proficient in JavaScript, React, Node.js,
+              and Python, I enjoy solving complex problems and building innovative solutions.
+            </motion.p>
 
             <div className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
             <motion.div
