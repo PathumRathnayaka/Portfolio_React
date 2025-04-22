@@ -9,7 +9,7 @@ const projects = [
         title: 'Spotify clone',
         description: 'The frontend is built with React and TypeScript for scalability and type safety, styled with Tailwind CSS, and uses Zustand for state management and React Query for efficient API calls. The backend runs on Node.js and Express.js, with MongoDB (via Mongoose) as the database. It features Clerk for secure authentication and role management, supporting various API functionalities.',
         technologies: ['React', 'Node.js', 'Express.js'],
-        github: 'https://github.com/PathumRathnayaka/Subtitle-Generator-AI.git',
+        github: 'https://github.com/PathumRathnayaka/Spotify-clone-front-end.git',
         image: 'https://spotifknowledge.com/wp-content/uploads/2024/06/ss3-1200x577.png',
     },
     {

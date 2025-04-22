@@ -61,7 +61,7 @@ export default function Services() {
             key={service.title}
             variants={cardVariants}
             className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10 flex w-full items-center px-4 py-6 text-black duration-200 hover:no-underline dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col"
-            href="#"
+            
             target="_blank"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500/0 via-teal-500/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
