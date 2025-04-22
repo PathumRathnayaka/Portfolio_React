@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 
 const articles = [
   {
@@ -27,30 +27,41 @@ const articles = [
 
 const certificates = [
   {
-    title: 'React.js Advanced Certification',
-    issuer: 'Meta',
+    title: 'AI in the Data Center',
+    issuer: 'NVIDIA',
     date: 'Apr 10, 2024',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmc6bKmYesJCaFuWTpOlOM6WiP2kGkJ0W8Hw&s',
+    image: '/nvidia.png',
     link: '#certificate-link'
   },
   {
-    title: 'Full Stack Web Development',
+    title: 'Google Data Analytics',
     issuer: 'freeCodeCamp',
     date: 'Feb 22, 2024',
-    image: 'https://mir-s3-cdn-cf.behance.net/projects/404/e77fd7215423541.Y3JvcCw5NzAsNzU5LDIsMA.jpg',
+    image: '/google.png',
     link: '#certificate-link'
   },
   {
-    title: 'AWS Cloud Practitioner',
+    title: 'Business Intelligence',
     issuer: 'Amazon Web Services',
     date: 'Jan 15, 2024',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4NzcNGMKM6FOzIkyVAkO8j1X64r7A65G9lQ&s',
+    image: '/Cour.png',
     link: '#certificate-link'
   },
 ];
 
 export default function ContentTabs() {
   const [activeTab, setActiveTab] = useState('articles');
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  // Function to open the certificate popup
+  const openCertificatePopup = (certificate) => {
+    setSelectedCertificate(certificate);
+  };
+
+  // Function to close the certificate popup
+  const closeCertificatePopup = () => {
+    setSelectedCertificate(null);
+  };
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-[#092537]">
@@ -174,19 +185,47 @@ export default function ContentTabs() {
                   <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors duration-300">
                     {certificate.title}
                   </h3>
-                  <a
-                    href={certificate.link}
+                  <button
+                    onClick={() => openCertificatePopup(certificate)}
                     className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-all duration-300 group/link"
                   >
                     <span className="text-sm">View Certificate</span>
                     <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-                  </a>
+                  </button>
                 </div>
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
               </article>
             ))}
+          </div>
+        )}
+
+        {/* Certificate Popup Modal */}
+        {selectedCertificate && (
+          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+            <div className="relative max-w-4xl w-full max-h-screen overflow-auto">
+              {/* Close button */}
+              <button 
+                onClick={closeCertificatePopup}
+                className="absolute right-4 top-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-black p-2 rounded-full z-50 transition-all duration-300"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              {/* Certificate Image */}
+              <div className="bg-white/5 backdrop-blur-md p-2 rounded-2xl shadow-2xl">
+                <img 
+                  src={selectedCertificate.image} 
+                  alt={selectedCertificate.title} 
+                  className="w-full h-auto object-contain rounded-xl"
+                />
+                <div className="text-center text-white py-3 px-4">
+                  <h3 className="text-lg font-semibold mb-1">{selectedCertificate.title}</h3>
+                  <p className="text-sm text-white/70">{selectedCertificate.issuer} • {selectedCertificate.date}</p>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
