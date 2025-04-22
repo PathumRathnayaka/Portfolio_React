@@ -13,7 +13,7 @@ const articles = [
     title: 'The Future of Web Development',
     excerpt: 'Exploring upcoming trends and technologies in web development for 2024 and beyond.',
     date: 'Mar 10, 2024',
-    image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://www.startdesigns.com/wp-content/uploads/2022/06/Future-of-Web-Development-2022.jpg',
     link: 'https://www.blogger.com/blog/post/edit/8514125923631382986/5390360106439228933'
   },
   {

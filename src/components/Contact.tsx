@@ -1,6 +1,25 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -85,52 +104,62 @@ export default function Contact() {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                        placeholder="Your Name"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
-                    />
-                  </div>
+                <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.3 }}
+  className="space-y-6"
+>
+  <motion.div variants={itemVariants}>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value={formData.name}
+      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+      required
+      placeholder="Your Name"
+      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+    />
+  </motion.div>
 
-                  <div>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                        placeholder="Your Email"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
-                    />
-                  </div>
+  <motion.div variants={itemVariants}>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      value={formData.email}
+      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      required
+      placeholder="Your Email"
+      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+    />
+  </motion.div>
 
-                  <div>
-                  <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      required
-                      placeholder="Your Message"
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300 resize-none"
-                  />
-                  </div>
+  <motion.div variants={itemVariants}>
+    <textarea
+      id="message"
+      name="message"
+      value={formData.message}
+      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+      required
+      placeholder="Your Message"
+      rows={4}
+      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300 resize-none"
+    />
+  </motion.div>
 
-                  <button
-                      type="submit"
-                      className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 group"
-                  >
-                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                    <span>Send Message</span>
-                  </button>
+  <motion.div variants={itemVariants}>
+    <button
+      type="submit"
+      className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-lg transition-all duration-300 group"
+    >
+      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+      <span>Send Message</span>
+    </button>
+  </motion.div>
+</motion.div>
                 </form>
               </div>
             </div>
