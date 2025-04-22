@@ -217,7 +217,7 @@ const RoadMap = () => {
   return (
     <section className='py-20 bg-gray-50 dark:bg-[#092537]'>
       <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-semibold text-center mb-12'>My Journey</h2>
+        <h2 className='text-4xl font-semibold text-center mb-12 text-gray-700 dark:text-gray-300'>My Journey</h2>
         <div className='max-w-5xl mx-auto'>
           <div className="relative w-full overflow-clip">
             <Timeline data={timelineData} />
