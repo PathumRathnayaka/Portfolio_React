@@ -3,11 +3,11 @@ import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 export default function Footer() {
     const socialLinks = [
-        { icon: <Facebook className="w-5 h-5" />, href: '#', label: 'Facebook' },
-        { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
-        { icon: <Instagram className="w-5 h-5" />, href: '#', label: 'Instagram' },
-        { icon: <Linkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
-        { icon: <Github className="w-5 h-5" />, href: '#', label: 'GitHub' },
+        { icon: <Facebook className="w-5 h-5" />, href: 'https://www.facebook.com/t.pathum.rathayaka?mibextid=ZbWKwL', label: 'Facebook' },
+        { icon: <Twitter className="w-5 h-5" />, href: 'https://x.com/pathum_rathnaya?s=09', label: 'Twitter' },
+        { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/pathum__rathnayaka?igsh=MjdhcHlpdjd6NnR6', label: 'Instagram' },
+        { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/pathum-rathnayaka-02631b1b8/', label: 'LinkedIn' },
+        { icon: <Github className="w-5 h-5" />, href: 'https://github.com/PathumRathnayaka', label: 'GitHub' },
     ];
 
     return (
