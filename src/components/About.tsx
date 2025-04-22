@@ -29,6 +29,11 @@ const item = {
   show: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
+const headingVariants = {
+  hidden: { x: 100, opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } }
+};
+
 export default function About() {
   
   const words = [
@@ -60,7 +65,7 @@ export default function About() {
           </div>
           <div className="mb-5">
             <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base">
-            Let’s turn ideas into real-world apps
+            Let's turn ideas into real-world apps
             </p>
           </div>
           <div className="w-20 mx-auto mb-6">
@@ -134,19 +139,20 @@ export default function About() {
           </div>
 
           <div className="text-center md:text-left">
-          <motion.h2
-  initial={{ x: 100, opacity: 0 }}         
-  whileInView={{ x: 0, opacity: 1 }}       
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  viewport={{ once: true, amount: 0.5 }}   
->
-  We can make it together
-</motion.h2>
+            <motion.h2
+              variants={headingVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.5 }}
+              className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent"
+            >
+              We can make it together
+            </motion.h2>
             
             <motion.p
               initial={{ x: 100, opacity: 0 }}        
               whileInView={{ x: 0, opacity: 1 }}      
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, amount: 0.5 }}   
               className="text-gray-700 dark:text-gray-300 leading-relaxed"
             >
@@ -155,36 +161,40 @@ export default function About() {
               and Python, I enjoy solving complex problems and building innovative solutions.
             </motion.p>
 
-            <div className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
             <motion.div
-  variants={container}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true, amount: 0.3 }}
-  className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start"
->
-  {skills.map((skill) => (
-    <motion.span
-      key={skill}
-      variants={item}
-      className="px-4 py-2 rounded-full bg-teal-500/10 dark:bg-teal-500/5 text-teal-700 dark:text-teal-300 text-sm font-medium border border-teal-400"
-    >
-      {skill}
-    </motion.span>
-  ))}
-</motion.div>
-            </div>
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start"
+            >
+              {skills.map((skill) => (
+                <motion.span
+                  key={skill}
+                  variants={item}
+                  className="px-4 py-2 rounded-full bg-teal-500/10 dark:bg-teal-500/5 text-teal-700 dark:text-teal-300 text-sm font-medium border border-teal-400"
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </motion.div>
 
-            <div className="flex justify-center md:justify-start mt-6">
-    <div className="bg-white dark:bg-gray-800/30 rounded-full p-1 shadow-md">
-      <a
-        href="/Pathum Rathnayaka.pdf"
-        className="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg inline-block"
-      >
-        Download my CV
-      </a>
-    </div>
-  </div>
+            <motion.div 
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="flex justify-center md:justify-start mt-6"
+            >
+              <div className="bg-white dark:bg-gray-800/30 rounded-full p-1 shadow-md">
+                <a
+                  href="/Pathum Rathnayaka.pdf"
+                  className="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg inline-block hover:shadow-xl hover:scale-105"
+                >
+                  Download my CV
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
