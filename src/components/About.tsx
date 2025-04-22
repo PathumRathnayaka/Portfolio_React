@@ -19,7 +19,7 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.1, // delay between each child
+      staggerChildren: 0.1, 
     },
   },
 };
@@ -30,8 +30,7 @@ const item = {
 };
 
 export default function About() {
-  // For the TypewriterEffectSmooth component, we need to modify its styling
-  // We'll wrap the component in a div with a class that adjusts the font size for mobile
+  
   const words = [
     {
       text: "Build",
@@ -55,7 +54,7 @@ export default function About() {
     <section id="about" className="py-20 bg-gray-50 dark:bg-[#092537]">
       <div className="container mx-auto px-4" >
         <div className="max-w-6xl mx-auto text-center">
-          {/* Add a wrapper with responsive font size scaling */}
+          
           <div className="mb-5 text-2xl md:text-base flex justify-center">
             <TypewriterEffectSmooth words={words} />
           </div>
@@ -136,20 +135,19 @@ export default function About() {
 
           <div className="text-center md:text-left">
           <motion.h2
-  initial={{ x: 100, opacity: 0 }}         // Start off to the right
-  whileInView={{ x: 0, opacity: 1 }}       // Slide into place
+  initial={{ x: 100, opacity: 0 }}         
+  whileInView={{ x: 0, opacity: 1 }}       
   transition={{ duration: 0.6, ease: "easeOut" }}
-  viewport={{ once: true, amount: 0.5 }}   // Animate when 50% visible, only once
-  className="text-4xl font-semibold mb-4 text-gray-700 dark:text-gray-300"
+  viewport={{ once: true, amount: 0.5 }}   
 >
   We can make it together
 </motion.h2>
-            {/* Paragraph animation from right */}
+            
             <motion.p
-              initial={{ x: 100, opacity: 0 }}         // Start off to the right
-              whileInView={{ x: 0, opacity: 1 }}       // Slide into place
+              initial={{ x: 100, opacity: 0 }}        
+              whileInView={{ x: 0, opacity: 1 }}      
               transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}   // Animate when 50% visible, only once
+              viewport={{ once: true, amount: 0.5 }}   
               className="text-gray-700 dark:text-gray-300 leading-relaxed"
             >
               I'm a passionate software engineer specializing in developing web and mobile
