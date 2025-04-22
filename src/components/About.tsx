@@ -1,6 +1,7 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import { motion } from "framer-motion";
 
 const skills = [
   "JavaScript",
@@ -13,6 +14,20 @@ const skills = [
   "SQL",
   "AWS",
 ];
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1, // delay between each child
+    },
+  },
+};
+
+const item = {
+  hidden: { x: 50, opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
+};
 
 export default function About() {
   // For the TypewriterEffectSmooth component, we need to modify its styling
@@ -120,9 +135,15 @@ export default function About() {
           </div>
 
           <div className="text-center md:text-left">
-            <h2 className="text-4xl font-semibold mb-4 text-gray-700 dark:text-gray-300 ">
-              We can make it together
-            </h2>
+          <motion.h2
+  initial={{ x: 100, opacity: 0 }}         // Start off to the right
+  whileInView={{ x: 0, opacity: 1 }}       // Slide into place
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.5 }}   // Animate when 50% visible, only once
+  className="text-4xl font-semibold mb-4 text-gray-700 dark:text-gray-300"
+>
+  We can make it together
+</motion.h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             I'm a passionate software engineer specializing in developing web and mobile
              applications. Proficient in JavaScript, React, Node.js,
@@ -130,14 +151,23 @@ export default function About() {
             </p>
 
             <div className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 rounded-full bg-teal-500/10 dark:bg-teal-500/5 text-teal-700 dark:text-teal-300 text-sm font-medium border border-teal-400"
-                >
-                  {skill}
-                </span>
-              ))}
+            <motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.3 }}
+  className="flex flex-wrap gap-3 mt-4 justify-center md:justify-start"
+>
+  {skills.map((skill) => (
+    <motion.span
+      key={skill}
+      variants={item}
+      className="px-4 py-2 rounded-full bg-teal-500/10 dark:bg-teal-500/5 text-teal-700 dark:text-teal-300 text-sm font-medium border border-teal-400"
+    >
+      {skill}
+    </motion.span>
+  ))}
+</motion.div>
             </div>
 
             <div className="flex justify-center md:justify-start mt-6">

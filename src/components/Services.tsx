@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, Smartphone, Database, PenTool } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -24,16 +25,41 @@ const services = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
 export default function Services() {
   return (
-    <div id='services' className="mx-auto mt-24 mb-20 max-w-6xl text-center p-6  bg-gray-50 dark:bg-[#092537]">
-      <h2 className=" mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
+    <div id="services" className="mx-auto mt-24 mb-20 max-w-6xl text-center p-6 bg-gray-50 dark:bg-[#092537]">
+      <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
         My Services
       </h2>
-      <div className="mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-y-0 sm:space-x-8 sm:text-center">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="mx-auto max-w-3xl items-stretch space-y-4 text-left sm:flex sm:space-y-0 sm:space-x-8 sm:text-center"
+      >
         {services.map((service) => (
-          <a
+          <motion.a
             key={service.title}
+            variants={cardVariants}
             className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-2 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10 flex w-full items-center px-4 py-6 text-black duration-200 hover:no-underline dark:text-white dark:hover:bg-white dark:hover:bg-opacity-10 sm:flex-col"
             href="#"
             target="_blank"
@@ -51,9 +77,9 @@ export default function Services() {
               </div>
             </div>
             <div className="absolute inset-0 rounded-xl bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
