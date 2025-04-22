@@ -26,7 +26,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="mx-auto mt-24 mb-20 max-w-6xl text-center p-6  bg-gray-50 dark:bg-[#092537]">
+    <div id='services' className="mx-auto mt-24 mb-20 max-w-6xl text-center p-6  bg-gray-50 dark:bg-[#092537]">
       <h2 className=" mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
         My Services
       </h2>

@@ -1,5 +1,16 @@
+"use client";
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { 
+  Navbar, 
+  NavBody, 
+  NavItems, 
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
+  NavbarLogo,
+  NavbarButton
+} from './ui/resizable-navbar'; // Update this path as needed
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,62 +25,62 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { name: 'Home', link: '#home' },
+    { name: 'About', link: '#about' },
+    { name: 'Projects', link: '#projects' },
+    { name: 'Services', link: '#services' },
   ];
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
-            
-          </a>
-
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-gray-300 hover:text-teal-400 transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-gray-700 transition-colors"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+    <Navbar className="transition-all duration-300">
+      {/* Desktop Navigation */}
+      <NavBody visible={isScrolled} className="px-4">
+        <NavbarLogo />
+        <NavItems 
+          items={navItems} 
+          className="mx-auto"
+        />
+        <div className="relative z-20 flex items-center justify-end gap-2">
+          <NavbarButton variant="secondary" href="#contact">
+            Contact
+          </NavbarButton>
+          <NavbarButton variant="primary" href="#roadmap">
+            Roadmap
+          </NavbarButton>
         </div>
+      </NavBody>
 
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="block px-3 py-2 rounded-md text-gray-300 hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+      {/* Mobile Navigation */}
+      <MobileNav visible={isScrolled}>
+        <MobileNavHeader>
+          <NavbarLogo />
+          <MobileNavToggle isOpen={isMenuOpen} onClick={toggleMenu} />
+        </MobileNavHeader>
+        <MobileNavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              className="w-full px-3 py-2 text-lg font-medium text-gray-800 transition-colors hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.name}
+            </a>
+          ))}
+          <div className="mt-4 flex w-full flex-col gap-2">
+            <NavbarButton variant="secondary" href="#contact" className="w-full">
+              Contact
+            </NavbarButton>
+            <NavbarButton variant="primary" href="#roadmap" className="w-full">
+              Roadmap
+            </NavbarButton>
           </div>
-        )}
-      </div>
-    </header>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
   );
 }
