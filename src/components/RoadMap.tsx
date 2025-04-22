@@ -217,7 +217,11 @@ const RoadMap = () => {
   return (
     <section id='roadmap' className='py-20 bg-gray-50 dark:bg-[#092537]'>
       <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-semibold text-center mb-12 text-gray-700 dark:text-gray-300'>My Journey</h2>
+      <h2 className="mb-12 text-center text-2xl font-bold text-gray-900 dark:text-gray-200 sm:text-5xl">
+      <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
+        My Journey
+      </span>
+    </h2>
         <div className='max-w-5xl mx-auto'>
           <div className="relative w-full overflow-clip">
             <Timeline data={timelineData} />

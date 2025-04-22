@@ -46,9 +46,11 @@ const cardVariants = {
 export default function Services() {
   return (
     <div id="services" className="mx-auto mt-24 mb-20 max-w-6xl text-center p-6 bg-gray-50 dark:bg-[#092537]">
-      <h2 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl">
-        My Services
-      </h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white group relative">
+  <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">
+    My Services
+  </span>
+</h2>
       <motion.div
         variants={containerVariants}
         initial="hidden"
