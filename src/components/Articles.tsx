@@ -64,7 +64,7 @@ export default function ContentTabs() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-[#092537]">
+    <section id="articles" className="py-20 bg-gray-50 dark:bg-[#092537]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white group relative">
           <span className="relative z-10 bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent hover:from-teal-600 hover:to-blue-600 transition-all duration-300">

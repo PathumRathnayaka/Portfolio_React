@@ -48,8 +48,8 @@ export default function Header() {
           <NavbarButton variant="secondary" href="#contact">
             Contact
           </NavbarButton>
-          <NavbarButton variant="primary" href="#roadmap">
-            Roadmap
+          <NavbarButton variant="primary" href="#articles">
+          articles
           </NavbarButton>
         </div>
       </NavBody>
@@ -75,8 +75,8 @@ export default function Header() {
             <NavbarButton variant="secondary" href="#contact" className="w-full">
               Contact
             </NavbarButton>
-            <NavbarButton variant="primary" href="#roadmap" className="w-full">
-              Roadmap
+            <NavbarButton variant="primary" href="#articles" className="w-full">
+            articles
             </NavbarButton>
           </div>
         </MobileNavMenu>
