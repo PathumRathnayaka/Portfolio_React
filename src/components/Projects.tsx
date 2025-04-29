@@ -11,6 +11,7 @@ const projects = [
         technologies: ['React', 'Node.js', 'Express.js'],
         github: 'https://github.com/PathumRathnayaka/Spotify-clone-front-end.git',
         image: 'https://spotifknowledge.com/wp-content/uploads/2024/06/ss3-1200x577.png',
+        web: 'https://spotifyremake.vercel.app'
     },
     {
         title: 'Crop Management System',
@@ -18,6 +19,7 @@ const projects = [
         technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
         github: 'https://github.com/PathumRathnayaka/Crop-Monitoring-System-React.git',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEZU2clm4hgRLLfvXV9GySFRMGRC47ZbIu5Q&s',
+        web: 'https://spotifyremake.vercel.app'
     },
     {
         title: 'AI-Powered Travel Planner',
@@ -25,6 +27,7 @@ const projects = [
         technologies: ['React', 'firebase', 'OpenAI'],
         github: 'https://github.com/PathumRathnayaka/AI-travel-planner.git',
         image: 'https://www.flightslogic.com/public/images/contents/tour-management-system1.jpg',
+        web: 'https://spotifyremake.vercel.app'
     },
     {
         title: 'Password Manager',
@@ -32,6 +35,7 @@ const projects = [
         technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Crypto.js'],
         github: 'https://github.com/PathumRathnayaka/Password-Manager.git',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd5ceiOeEOKvQxOAKPfA6F2abt_YH0frk67A&s',
+        web: 'https://spotifyremake.vercel.app'
     },
 ];
 
@@ -93,7 +97,7 @@ export default function Projects() {
                                         <span>Code</span>
                                     </a>
                                     <a
-                                        href={project.github}
+                                        href={project.web}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center space-x-1 px-3 py-1.5 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white rounded-md transition-all duration-300 text-sm"
