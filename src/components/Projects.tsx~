@@ -26,7 +26,7 @@ const projects = [
         description: 'A full-featured salon booking system built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows customers to browse services, check stylist availability, book appointments, and receive confirmations. Admins can manage bookings, staff schedules, and services through a secure dashboard.',
         technologies: ['React', 'firebase', 'OpenAI'],
         github: 'https://github.com/PathumRathnayaka/salon-client-website.git',
-        image: '../assets/salon.png',
+        image: 'https://media.istockphoto.com/id/1497806504/photo/hair-styling-in-beauty-salon-woman-does-her-hair-in-modern-beauty-salon-woman-stylist-dries.jpg?s=612x612&w=0&k=20&c=3dO_HWS8WvSGNbGmxTsqK70vZMGqM2REnbVJG09YnmI=',
         web: 'https://salonbooking-lemon.vercel.app/'
     },
     {
