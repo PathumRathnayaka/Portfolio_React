@@ -33,9 +33,9 @@ const projects = [
         title: 'Construction Marketplace',
         description: 'I\'ve implemented a complete e-commerce solution for Brick.lk, modeled after Amazon but tailored specifically for Sri Lanka\'s construction market. The application features a responsive design with dedicated sections for browsing construction products, services, and suppliers.',
         technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Crypto.js'],
-        github: 'https://github.com/PathumRathnayaka/Password-Manager.git',
+        github: 'https://github.com/PathumRathnayaka/Brick.lk-E-commerce-Website.git',
         image: 'https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/brick.PNG?raw=true',
-        web: 'https://spotifyremake.vercel.app'
+        web: 'https://bricklk.vercel.app/'
     },
 ];
 
