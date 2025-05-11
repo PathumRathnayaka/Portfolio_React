@@ -26,15 +26,15 @@ const projects = [
         description: 'A full-featured salon booking system built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows customers to browse services, check stylist availability, book appointments, and receive confirmations. Admins can manage bookings, staff schedules, and services through a secure dashboard.',
         technologies: ['React', 'firebase', 'OpenAI'],
         github: 'https://github.com/PathumRathnayaka/salon-client-website.git',
-        image: '../assets/salon.png',
+        image: 'https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/salon.PNG?raw=true',
         web: 'https://salonbooking-lemon.vercel.app/'
     },
     {
-        title: 'Password Manager',
-        description: 'A secure password management application with encryption, password generation, and secure storage. Features include master password protection, auto-fill, and cross-device synchronization.',
+        title: 'Construction Marketplace',
+        description: 'I\'ve implemented a complete e-commerce solution for Brick.lk, modeled after Amazon but tailored specifically for Sri Lanka\'s construction market. The application features a responsive design with dedicated sections for browsing construction products, services, and suppliers.',
         technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Crypto.js'],
         github: 'https://github.com/PathumRathnayaka/Password-Manager.git',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd5ceiOeEOKvQxOAKPfA6F2abt_YH0frk67A&s',
+        image: 'https://github.com/PathumRathnayaka/Portfolio_React/blob/main/src/assets/brick.PNG?raw=true',
         web: 'https://spotifyremake.vercel.app'
     },
 ];
@@ -62,7 +62,7 @@ export default function Projects() {
                         <WobbleCard
                             key={project.title}
                             containerClassName={cn(
-                                project.title === 'Spotify clone' || project.title === 'Password Manager'
+                                project.title === 'Spotify clone' || project.title === 'Construction Marketplace'
                                     ? 'col-span-1 lg:col-span-2'
                                     : 'col-span-1',
                                 "bg-white dark:bg-gray-800/50 backdrop-blur-sm min-h-[300px] border border-gray-200 dark:border-gray-700/50 hover:border-teal-500/50 shadow-lg dark:shadow-xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/10 relative overflow-hidden"
