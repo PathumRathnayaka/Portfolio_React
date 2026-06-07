@@ -1,51 +1,103 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --bg: #f7f4ef;
+  --bg-2: #edf4f1;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-raised: rgba(255, 255, 255, 0.92);
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --heading: #15201f;
+  --text: #53615e;
+  --muted: #7a8783;
+  --line: rgba(29, 44, 42, 0.14);
+  --accent: #1a7e7a;
+  --accent-strong: #11635f;
+  --button-text: #ffffff;
+  --panel-glow: rgba(212, 109, 75, 0.18);
+  --shadow-soft: 0 12px 34px rgba(22, 34, 32, 0.08);
+  --shadow-card: 0 28px 70px rgba(22, 34, 32, 0.14);
+  --shadow-accent: 0 18px 34px rgba(26, 126, 122, 0.22);
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='dark'] {
+  --bg: #111615;
+  --bg-2: #182321;
+  --surface: rgba(24, 32, 30, 0.82);
+  --surface-raised: rgba(31, 42, 39, 0.96);
+  --nav-bg: rgba(24, 32, 30, 0.76);
+  --heading: #f3f1e8;
+  --text: #c0cac5;
+  --muted: #899792;
+  --line: rgba(243, 241, 232, 0.13);
+  --accent: #d46d4b;
+  --accent-strong: #ffad87;
+  --button-text: #17110e;
+  --panel-glow: rgba(26, 126, 122, 0.22);
+  --shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.18);
+  --shadow-card: 0 28px 80px rgba(0, 0, 0, 0.36);
+  --shadow-accent: 0 18px 34px rgba(212, 109, 75, 0.18);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, var(--bg-2), transparent 34rem),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 72%);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 62%, transparent);
+  outline-offset: 3px;
+}
+
 ::selection {
-  background-color: #14b8a6;
-  color: white;
+  color: var(--button-text);
+  background: var(--accent);
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 3s ease infinite;
-}
-
-@layer base {
-  :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --radius: 0.5rem;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-[hsl(var(--border))];
-  }
-  body {
-    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
-  }
+#root {
+  min-height: 100vh;
 }
